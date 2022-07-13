@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import dbConnection from './database/config.js';
 import routerNaveNoTripulada from './routes/naveNoTripulada.js';
+import routerNaveLanzadera from './routes/naveLanzadera.js';
 
 
 //VARIABLES DE ENTORNO
@@ -24,6 +25,8 @@ app.use(express.static('public'));
 app.use(express.json());
 
 app.use(routerNaveNoTripulada);
+
+app.use(routerNaveLanzadera);
 
 //CONFIGURACIÓN DE SERVIDOR
 app.listen({ port: process.env.PORT || 4000 }, () => {
