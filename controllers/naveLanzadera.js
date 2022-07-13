@@ -6,6 +6,12 @@ const getNavesLanzadera = async (req, res = response) => {
     res.json(navesLanzaderas);
 }
 
+const getNavesLanzaderaId = async (req, res = response) => {
+    const { id } = req.params;
+    const naveLanzadera = await ModeloLanzadera.findById(id);
+    res.json(naveLanzadera);
+}
+
 const crearNaveLanzadera = async (req, res = response) => {
     const naveLanzadera = new ModeloLanzadera(req.body);
     try {
@@ -23,4 +29,4 @@ const crearNaveLanzadera = async (req, res = response) => {
     }
 }
 
-export { getNavesLanzadera, crearNaveLanzadera };
+export { getNavesLanzadera, getNavesLanzaderaId, crearNaveLanzadera };

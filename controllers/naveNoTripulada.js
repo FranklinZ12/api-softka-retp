@@ -6,6 +6,12 @@ const getNavesNoTripuladas = async (req, res = response) => {
     res.json(navesNoTripuladas);
 }
 
+const getNavesNoTripuladasId = async (req, res = response) => {
+    const { id } = req.params;
+    const naveNoTripulada = await ModeloNaveNoTripulada.findById(id);
+    res.json(naveNoTripulada);
+}
+
 const crearNaveNoTripulada = async (req, res = response) => {
     const naveNoTripulada = new ModeloNaveNoTripulada(req.body);
     try {
@@ -23,4 +29,4 @@ const crearNaveNoTripulada = async (req, res = response) => {
     }
 }
 
-export { getNavesNoTripuladas, crearNaveNoTripulada };
+export { getNavesNoTripuladas, getNavesNoTripuladasId, crearNaveNoTripulada };
