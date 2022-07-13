@@ -7,6 +7,10 @@ const NaveNoTripuladaSchema = new Schema({
     imgUrl:{
         type: String,
     },
+    tipo: {
+        type: String,
+        default: 'Nave robótica'
+    },
     nombre: {
         type: String,
         required: true
@@ -33,7 +37,8 @@ const NaveNoTripuladaSchema = new Schema({
     },
     estado: {
         type: String,
-        enum: ['disponible', 'en uso', 'en mantenimiento'],
+        enum: ['Disponible', 'En uso', 'En mantenimiento'],
+        default: 'Disponible',
         required: true
     }
 });

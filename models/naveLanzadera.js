@@ -8,6 +8,10 @@ const NaveLanzaderaSchema = new Schema({
         type: String,
         required: true
     },
+    tipo:{
+        type: String,
+        default:'Vehículo lanzadera'
+    },
     peso:{
         type: String,
         required: true

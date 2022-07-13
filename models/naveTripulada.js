@@ -8,6 +8,10 @@ const NaveTripuladaSchema = new Schema({
         type: String,
         required: true
     },
+    tipo: {
+        type: String,
+        default: 'Nave espacial tripulada'
+    },
     peso: {
         type: String,
         required: true
