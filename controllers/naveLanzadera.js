@@ -8,8 +8,15 @@ const getNavesLanzadera = async (req, res = response) => {
 
 const getNavesLanzaderaId = async (req, res = response) => {
     const { id } = req.params;
-    const naveLanzadera = await ModeloLanzadera.findById(id);
-    res.json(naveLanzadera);
+    try {
+        const naveLanzadera = await ModeloLanzadera.findById(id);
+        if (!naveLanzadera) {
+            res.status(404).json({ msg: 'Nave lanzadera no encontrada' });
+        }
+        res.json(naveLanzadera);
+    } catch (error) {
+        res.status(500).json({ msg: 'Hubo un error, id no encontrado' });
+    }
 }
 
 const crearNaveLanzadera = async (req, res = response) => {

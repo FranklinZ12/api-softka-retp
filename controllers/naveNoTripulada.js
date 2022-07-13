@@ -8,8 +8,15 @@ const getNavesNoTripuladas = async (req, res = response) => {
 
 const getNavesNoTripuladasId = async (req, res = response) => {
     const { id } = req.params;
-    const naveNoTripulada = await ModeloNaveNoTripulada.findById(id);
-    res.json(naveNoTripulada);
+    try {
+        const naveNoTripulada = await ModeloNaveNoTripulada.findById(id);
+        if (!naveNoTripulada) {
+            res.status(404).json({ msg: 'Nave no tripulada no encontrada' });
+        }
+        res.json(naveNoTripulada);
+    } catch (error) {
+        res.status(500).json({ msg: 'Hubo un error, id no encontrado' });
+    }
 }
 
 const crearNaveNoTripulada = async (req, res = response) => {
