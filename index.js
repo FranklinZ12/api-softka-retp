@@ -28,9 +28,6 @@ app.use(express.json());
 app.use(routerNaveNoTripulada);
 app.use(routerNaveLanzadera);
 app.use(routerNaveTripulada);
-app.get('*', (req, res) => {
-    res.status(404).send('Not found');
-});
 
 //CONFIGURACIÓN DE SERVIDOR
 app.listen({ port: process.env.PORT || 4000 }, () => {

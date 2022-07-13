@@ -1,5 +1,5 @@
 import { response } from "express";
-import {ModeloLanzadera} from "../models/naveLanzadera.js";
+import { ModeloLanzadera } from "../models/naveLanzadera.js";
 
 const getNavesLanzadera = async (req, res = response) => {
     const navesLanzaderas = await ModeloLanzadera.find();
