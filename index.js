@@ -1,10 +1,10 @@
 import express from 'express';
 import dotenv from "dotenv";
-import cors from "cors";
 import dbConnection from './database/config.js';
 import routerNaveNoTripulada from './routes/naveNoTripulada.js';
 import routerNaveLanzadera from './routes/naveLanzadera.js';
 import routerNaveTripulada from './routes/naveTripulada.js';
+import cors from "cors";
 
 
 //VARIABLES DE ENTORNO
